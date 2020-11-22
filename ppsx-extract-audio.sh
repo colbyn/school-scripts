@@ -16,7 +16,7 @@ fi
 unzip $INPUT_FILE -d "$TMP_DIR_UNZIPED"
 
 mkdir -p $OUTPUT_DIR
-AUDIO_FILES=$(find /var/folders/7k/ltr5p2hd75g9r5n6kl5hhv6c0000gn/T/tmp.92cd5QdC -name "*.m4a")
+AUDIO_FILES=$(find $TMP_DIR_UNZIPED -name "*.m4a")
 for i in $AUDIO_FILES; do
     cp -n $i $OUTPUT_DIR || (log_failed "ERROR FILE EXISTS!!! $i")
 done
